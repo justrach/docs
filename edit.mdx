@@ -1,0 +1,48 @@
+---
+title: Editing the template
+description: 'Here are a few steps on the structure of the website!'
+---
+
+
+# Structure 
+The structure of the website is primarily based on the '.json' file that is located in the /public folder of the project. You can find it on the [Github Repo](https://github.com/justrach/omni-epic/blob/main/public/research-paper-content.json)
+
+To edit the file, you can input Latex, as well as html syntaxes.
+
+Here is an example:
+
+```json
+{
+        "title": "Long Run with Simulated Learning",
+        "content": "To illustrate the creative explosion of generated tasks, we run OMNI-EPIC without training RL agents, assuming all generated tasks can be successfully completed. OMNI-EPIC generates tasks that significantly diverge from the seed tasks used to initialize the archive. OMNI-EPIC not only <strong>explores different task niches</strong> (e.g., navigating across different terrains vs. retrieving objects) but also generates <strong>interesting variations within each niche</strong> (e.g., retrieving objects in different simulated world settings).<br><br><strong>Explore the \\underline{interactive} graph below!</strong>",
+        "html": {
+          "alt": "OMNI-EPIC generates a diverse array of tasks, ranging from wildly different objectives to interesting variations of similar overarching tasks. The node color reflects the generation number of the task. A check mark in the node means that the task was successfully learned. A ZZZ symbol means that the task was deemed uninteresting and discarded. The node connections illustrate which tasks were conditioned on when asking an FM to generate a similar yet new and interesting task. Grey nodes show task description seeds that initialized the run.",
+          "src": "/htmls/long_run.html",
+          "height": "900px"
+}
+}
+```
+
+What this turns into is a page that looks something like [this](https://omni-epic.vercel.app/).
+
+You can even add Citations and this would update the entire website. Here is an example:
+
+```json
+
+    "citations": [
+      {
+        "id": "1",
+        "text": "@misc{faldor2024omniepic,\ntitle={OMNI-EPIC: Open-endedness via Models of human Notions of Interestingness with Environments Programmed in Code},\nauthor={Maxence Faldor and Jenny Zhang and Antoine Cully and Jeff Clune},\nyear={2024},\neprint={2405.15568},\narchivePrefix={arXiv},\nprimaryClass={cs.AI}\n}"
+      }
+    ],
+    "sections": [
+      {
+        "title": "",
+        "content": "",
+        "image": {
+          "alt": "",
+          "src": "/images/architecture.svg"
+        }
+      },
+
+```
